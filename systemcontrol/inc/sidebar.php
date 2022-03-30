@@ -12,8 +12,7 @@
                 <ul class="treeview-menu">
                     <li><a class="treeview-item" href="../../systemcontrol/Pages/blank.php"><i class="icon fa fa-circle-o"></i> Blank Page</a></li>
                     <li><a class="treeview-item" href="../../systemcontrol/Pages/form.php"><i class="icon fa fa-circle-o"></i> Form</a></li>
-                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Form Components</a></li>
-                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Table</a></li>
+                    <li><a class="treeview-item" href="../../systemcontrol/Pages/table.php"><i class="icon fa fa-circle-o"></i> Table</a></li>
                 </ul>
             </li>
         </ul>

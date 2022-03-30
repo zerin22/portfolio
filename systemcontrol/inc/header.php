@@ -22,6 +22,9 @@
     <!--Selectize CSS-->
     <link rel="stylesheet" type="text/css" href="../../systemcontrol/assets/js/plugins/selectize/dist/css/selectize.css">
     <link rel="stylesheet" type="text/css" href="../../systemcontrol/assets/js/plugins/selectize/dist/css/selectize.bootstrap4.css">
+    <!-- Data Table CSS-->
+    <link rel="stylesheet" type="text/css" href="../../systemcontrol/assets/js/plugins/datatable/datatables.css">
+    <link rel="stylesheet" type="text/css" href="../../systemcontrol/assets/js/plugins/datatable/dataTables.bootstrap4.css">
     <!-- Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../systemcontrol/assets/css/style.css">
     <!-- Font-icon css-->
