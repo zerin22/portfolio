@@ -1,4 +1,7 @@
 <?php include_once("inc/header.php");?>
+<?php
+  SessionUser::checkUserSession();
+?>
   <body class="app sidebar-mini">
     <!-- Navbar-->
     <?php include_once('inc/navbar.php'); ?>

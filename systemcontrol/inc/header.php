@@ -1,3 +1,10 @@
+<?php
+  include_once('../core/Database.php');
+  include_once('../core/SessionUser.php');
+  SessionUser::init();
+
+  include_once('../class/Login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

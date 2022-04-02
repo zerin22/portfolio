@@ -1,3 +1,26 @@
+<?php
+  include_once('../core/Database.php'); // For database connection in class files
+  include_once('../core/SessionUser.php'); // Creating session and initializing session in all secured files
+  SessionUser::init();
+
+  include_once('../class/Login.php');
+
+  $login = new Login();
+
+  SessionUser::checkUserLogin();
+  // $userSession = SessionUser::getUser('userLogin');
+
+  // if($userSession == true)
+  // {
+
+  // }
+  if($_SERVER['REQUEST_METHOD']== 'POST' && isset($_POST['login'])){
+		/*
+    * Array type $_POST 
+    */
+	  $userLogin = $login->userLogin($_POST);
+	}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,19 +41,27 @@
       <div class="logo">
         <h1>Portfolio</h1>
       </div>
+      <?php
+        if(isset($userLogin))
+        {
+          echo $userLogin;
+        }
+      ?>
       <div class="login-box">
-        <form class="login-form" action="../systemcontrol/dashboard.php">
-          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
+        <form class="login-form" action="" method="POST">
+          <h3 class="login-head">
+            <i class="fa fa-lg fa-fw fa-user"></i>SIGN IN
+          </h3>
           <div class="form-group">
             <label class="control-label">USERNAME</label>
-            <input class="form-control" type="text" placeholder="Email" autofocus>
+            <input class="form-control" name="user_name" type="text" placeholder="Username">
           </div>
           <div class="form-group">
             <label class="control-label">PASSWORD</label>
-            <input class="form-control" type="password" placeholder="Password">
+            <input class="form-control" name="user_password" type="password" placeholder="Password">
           </div>
           <div class="form-group btn-container">
-            <button class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
+            <input type="submit" class="btn btn-primary btn-block" name="login" value="SIGN IN">
           </div>
         </form>
       </div>
