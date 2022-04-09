@@ -38,16 +38,22 @@ class Format{
 		$path = $_SERVER['SCRIPT_FILENAME'];
 		$title = basename($path, '.php');
 		//$title = str_replace('_', ' ', $title);
-		if ($title == 'index') {
-				$title = 'home';
-		}elseif ($title == 'dashboard') {
-				$title = 'Salesman | Dashboard';
-		}elseif ($title == 'dashboard') {
-				$title = 'Salesman | Dashboard';
-		}elseif ($title == 'order') {
-				$title = 'Salesman | Order';
-		}elseif ($title == 'invoice') {
-				$title = 'Salesman | Invoice';
+		if($title == 'dashboard') {
+				$title = 'Dashboard';
+		}elseif ($title == 'edit_profile') {
+				$title = 'Edit Profile';
+		}elseif ($title == 'profile') {
+				$title = 'User Profile';
+		}elseif ($title == 'profile') {
+			$title = 'User Profile';
+		}elseif ($title == 'blank') {
+			$title = 'Blank Page';
+		}elseif ($title == 'form') {
+				$title = 'Basic Form';
+		}elseif ($title == 'table') {
+			$title = 'Basic Table';
+		}elseif($title == 'update_password'){
+			$title = 'Update Password';
 		}
 		return $title = ucfirst($title);
 	}

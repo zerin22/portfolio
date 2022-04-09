@@ -71,4 +71,108 @@ class User{
             return $msg;
         }
     }
+
+    //Getting logged in user's profile
+    public function getProfile()
+    {
+        $user_id = SessionUser::getUser('user_id');
+
+        $query = "SELECT * FROM profiles WHERE user_id = '$user_id'";
+        $result = $this->db->select($query);
+
+        return $result; 
+    }
+
+    //Update Logged in user's profile
+    public function updateProfile($data)
+    {
+        $user_id = SessionUser::getUser('user_id');
+
+        $query = "SELECT * FROM profiles WHERE user_id = '$user_id'";
+        $result = $this->db->select($query);
+
+        if($result != false){
+            $phone = mysqli_real_escape_string($this->db->link, $data['user_phone']);
+            $address = mysqli_real_escape_string($this->db->link, $data['user_address']);
+            $about = mysqli_real_escape_string($this->db->link, $data['user_about']);
+
+            $updateQuery = "UPDATE profiles
+                      SET
+                      `phone` = '$phone',
+                      `address` = '$address',
+                      `about` = '$about'
+                      WHERE `user_id` = '$user_id'
+                    ";
+            $updatedResult = $this->db->update($updateQuery);
+
+            if($updatedResult)
+            {
+                $msg = "
+                    <div class='alert alert-success text-center'>
+                        Profile updated successfully!
+                    </div>";
+                return $msg;
+            }else{
+                $msg = "
+                    <div class='alert alert-danger text-center'>
+                        Unable to update profile!
+                    </div>";
+                return $msg;
+            }
+        }else{
+            $msg = "
+                <div class='alert alert-danger text-center'>
+                    Profile not found!
+                </div>";
+            return $msg;
+        }
+    }
+
+    //Update logged in user's password
+    public function updatePassword($data)
+    {
+        $user_id = SessionUser::getUser('user_id');
+        $old_password = $data['user_old_password'];
+        $new_password = $data['user_new_password'];
+        $confirm_password = $data['user_confirm_new_password'];
+        
+        if( $old_password == "" || $new_password == ""){
+            $msg = 'empty_error';
+			return $msg;
+        }
+
+        if( $old_password != $confirm_password){
+            $msg = 'confirm_error';
+			return $msg;
+        }
+
+        //Verifying old password
+        $old_password = md5($old_password);
+        $confirm_password = md5($confirm_password);
+
+        $passQuery = "SELECT * FROM users WHERE user_id = '$user_id' AND password = '$old_password'";
+        $passResult = $this->db->select($passQuery);
+
+        if($passResult != false){
+            $updateQuery ="UPDATE users
+                        SET password='$confirm_password'
+                        WHERE user_id = '$user_id'
+                        ";
+            $updatedResult = $this->db->update($updateQuery);
+            if($updatedResult){
+                    $msg = '
+                    <div class="alert alert-success" style="text-align:center;">
+                        <h4 align="center">Password successfully changed.Please login again after you have been logged out.</h4>
+                    </div>
+                    ';
+                    return $msg;
+            }else{
+                $msg = 'faild_error';
+                return $msg;
+            }
+        }else{
+            $msg = 'not_matched_error';
+            return $msg;
+        }
+    }
 }
