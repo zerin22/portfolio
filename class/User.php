@@ -141,7 +141,7 @@ class User{
 			return $msg;
         }
 
-        if( $old_password != $confirm_password){
+        if( $new_password != $confirm_password){
             $msg = 'confirm_error';
 			return $msg;
         }
@@ -150,21 +150,17 @@ class User{
         $old_password = md5($old_password);
         $confirm_password = md5($confirm_password);
 
-        $passQuery = "SELECT * FROM users WHERE user_id = '$user_id' AND password = '$old_password'";
+        $passQuery = "SELECT * FROM users WHERE id = '$user_id' AND password = '$old_password'";
         $passResult = $this->db->select($passQuery);
 
         if($passResult != false){
             $updateQuery ="UPDATE users
                         SET password='$confirm_password'
-                        WHERE user_id = '$user_id'
+                        WHERE id = '$user_id'
                         ";
             $updatedResult = $this->db->update($updateQuery);
             if($updatedResult){
-                    $msg = '
-                    <div class="alert alert-success" style="text-align:center;">
-                        <h4 align="center">Password successfully changed.Please login again after you have been logged out.</h4>
-                    </div>
-                    ';
+                    $msg = 'success';
                     return $msg;
             }else{
                 $msg = 'faild_error';

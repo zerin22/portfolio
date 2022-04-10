@@ -31,29 +31,52 @@
                         if($updatePassword == 'empty_error')
                         {
                           echo "
-                          <div class='alert alert-success' style='text-align:center;'>
-                              <h4 align='center'>Old password & new password can not be empty!</h4>
-                          </div>
-                          ";
-                        }elseif($updatePassword == 'confirm_error'){
-                          echo "
-                            <div class='alert alert-success' style='text-align:center;'>
+                            <div class='alert alert-danger' style='text-align:center;'>
                                 <h4 align='center'>Old password & new password can not be empty!</h4>
                             </div>
                           ";
-                        }elseif($updatePassword == 'faild_error'){
-
-                        }elseif($updatePassword == 'not_matched_error'){
-
                         }
-                        echo $updatePassword;
-                        sleep(2);
-                        session_destroy();
+
+                        if($updatePassword == 'confirm_error')
+                        {
+                          echo "
+                            <div class='alert alert-danger' style='text-align:center;'>
+                                <h4 align='center'>New password & confrim password must be same!</h4>
+                            </div>
+                          ";
+                        }
+                        
+                        if($updatePassword == 'faild_error'){
+                          echo "
+                            <div class='alert alert-danger' style='text-align:center;'>
+                                <h4 align='center'>Failed to update password!</h4>
+                            </div>
+                          ";
+                        }
+                        
+                        if($updatePassword == 'not_matched_error'){
+                          echo "
+                            <div class='alert alert-danger' style='text-align:center;'>
+                                <h4 align='center'>Old password not matched!</h4>
+                            </div>
+                          ";
+                        }
+
+                        if($updatePassword == 'success'){
+                          echo "
+                            <div class='alert alert-success' style='text-align:center;'>
+                                <h4 align='center'>Password successfully changed.Please login again after you have been logged out.</h4>
+                            </div>
+                          ";
+                          session_destroy();
                     ?>
-                    <script>
-                      location.reload();
-                    </script>
+                        <script>
+                            setTimeout(function(){
+                            window.location.reload(1);
+                          }, 3000);
+                        </script>
                     <?php
+                        }
                       }
                     ?>
                     <form action="" method="POST">
