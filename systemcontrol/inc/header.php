@@ -11,8 +11,7 @@
   if(!$user->checkUserProfile())
   {
     header("Location:create_profile.php");
-  }
-
+  }  
   SessionUser::checkUserSession();
 
 ?>

@@ -19,7 +19,11 @@
           <div class="tile">
             <div class="tile-body">
                 <div>
-                    <img class="profile-img center-img" src="assets/img/avatars/default.png" alt="">
+                    <img class="profile-img center-img" src="assets/img/avatars/<?php echo $format->getAvatar(SessionUser::getUser('user_id'));?>" alt="">
+                </div>
+
+                <div class="text-center mt-3 mb-3">
+                  <a href="upload_avatar.php">Upload Avater</a>
                 </div>
 
                 <table class="table table-bordered mt-3">

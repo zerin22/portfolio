@@ -1,6 +1,7 @@
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-        <div class="app-sidebar__user"><img style="width:30px;" class="app-sidebar__user-avatar" src="../../systemcontrol/assets/img/avatars/default.png" alt="User Image">
+        <div class="app-sidebar__user">
+            <img style="width:30px;" class="app-sidebar__user-avatar" src="../../systemcontrol/assets/img/avatars/<?php echo $format->getAvatar(SessionUser::getUser('user_id'));?>" alt="User Image">
             <div>
                 <p class="app-sidebar__user-name">
                     <?php SessionUser::getUser('user_fName');?> 
