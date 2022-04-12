@@ -60,7 +60,7 @@ class User{
                         Profile created successfully! Please 
                         <a href='dashboard.php'>click here</a> for dashboard view.
                     </div>";
-            return $msg;
+                return $msg;
             }else{
                 $msg = "
                     <div class='alert alert-danger text-center'>

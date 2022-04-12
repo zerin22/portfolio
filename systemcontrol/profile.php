@@ -19,7 +19,7 @@
           <div class="tile">
             <div class="tile-body">
                 <div>
-                    <img class="profile-img center-img" src="assets/img/avatars/<?php echo $format->getAvatar(SessionUser::getUser('user_id'));?>" alt="">
+                    <img class="profile-img center-img" src="assets/img/avatars/<?php echo $helper->getAvatar(SessionUser::getUser('user_id'));?>" alt="">
                 </div>
 
                 <div class="text-center mt-3 mb-3">

@@ -1,0 +1,9 @@
+1. Template Mastering - Completed
+2. Dasabase Basic Design - Completed
+3. User Login - Completed 
+4. User Profile - Completed 
+5. User Security - Completed 
+6. User Avatar - Completed
+7. Site Settings - 
+	#Get Settings - Completed
+	#General Settings View & Update - Partially completed

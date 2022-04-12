@@ -82,7 +82,7 @@
                     <form action="" method="POST">
                         <div class="form-group">
                             <label for="userOldPassword">Old Password</label>
-                            <input class="form-control" name="user_old_password" id="userOldPassword" type="password" placeholder="Old Password"">
+                            <input class="form-control" name="user_old_password" id="userOldPassword" type="password" placeholder="Old Password">
                         </div>
 
                         <div class="form-group">
