@@ -134,18 +134,26 @@ class User{
     }
 
     //Update logged in user's password
+	/*
+	* Array type $data form subbmiting form through $_POST
+	*/
     public function updatePassword($data)
     {
+		//Getting logged in user ID from session
         $user_id = SessionUser::getUser('user_id');
+		
+		//Grabbing form data through $data array
         $old_password = $data['user_old_password'];
         $new_password = $data['user_new_password'];
         $confirm_password = $data['user_confirm_new_password'];
         
+		//Checking if form fields are empty
         if( $old_password == "" || $new_password == ""){
             $msg = 'empty_error';
 			return $msg;
         }
 
+		//Checking if new password and confirm new password is matched or not
         if( $new_password != $confirm_password){
             $msg = 'confirm_error';
 			return $msg;
@@ -157,7 +165,8 @@ class User{
 
         $passQuery = "SELECT * FROM users WHERE id = '$user_id' AND password = '$old_password'";
         $passResult = $this->db->select($passQuery);
-
+		
+		//If query is true update to new password 
         if($passResult != false){
             $updateQuery ="UPDATE users
                         SET password='$confirm_password'
@@ -172,6 +181,7 @@ class User{
                 return $msg;
             }
         }else{
+			//If old password not matched with database print this error
             $msg = 'not_matched_error';
             return $msg;
         }
@@ -233,7 +243,7 @@ class User{
         //Generating unique image name
         $imageName = str_shuffle(time()).'.'.$ext; 
 
-        // create an image manager instance with favored driver
+        // create an image manager instance with favored driver (gd=Graphics Driver)
         $manager = new ImageManager(['driver' => 'gd']);
         
         // to finally create image instances

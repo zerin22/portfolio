@@ -6,4 +6,5 @@
 6. User Avatar - Completed
 7. Site Settings - 
 	#Get Settings - Completed
-	#General Settings View & Update - Partially completed
+	#General & SEO Settings View & Update - completed
+	#Logo & SEO og:image - Need to implement
