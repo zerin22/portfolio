@@ -41,6 +41,8 @@ class Helper{
 			$title = 'Upload Avatar';
 		}elseif($title == 'settings'){
 			$title = 'Site Settings';
+		}elseif($title == 'education'){
+			$title = 'All Educations';
 		}
 		return $title = ucfirst($title);
 	}

@@ -34,7 +34,7 @@
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="userUploadAvatar">Choose Avatar</label>
-                            <input class="form-control" name="user_avatar" id="userUploadAvatar" type="file" placeholder="Avatar"">
+                            <input class="form-control" name="user_avatar" id="userUploadAvatar" type="file" placeholder="Avatar">
                         </div>
 
                         <div class="form-group">

@@ -18,7 +18,7 @@ class Setting{
         foreach($data as $key=>$value)
         {
             //SQL TRANSACTION PROCEDURE SHOULD BE WORK WITH TRY AND CATCH
-            if($key != 'generalSettings')
+            if($key != 'generalSettings')//submit button name generalSettings
             {
                 $query = "SELECT * FROM `settings` WHERE `key` = '$key'";
                 $result = $this->db->select($query);  
@@ -60,7 +60,6 @@ class Setting{
         
         foreach($data as $key=>$value)
         {
-            //SQL TRANSACTION PROCEDURE SHOULD BE WORK WITH TRY AND CATCH
             if($key != 'seoSettings')
             {
                 $query = "SELECT * FROM `settings` WHERE `key` = '$key'";
@@ -68,10 +67,10 @@ class Setting{
             }
             
             if($result){
-                $query = "UPDATE `settings`
-                          SET 
-                          `value` = '$value'
-                          WHERE `key` = '$key'
+                $query = "UPDATEE `settings`
+                SET 
+                `value` = '$value'
+                WHERE `key` = '$key'
                 ";
                 $result = $this->db->update($query);
             }else{

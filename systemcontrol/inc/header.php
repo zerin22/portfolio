@@ -1,14 +1,16 @@
 <?php
   include_once('../core/Database.php');
   include_once('../core/SessionUser.php');
-  include_once('../core/helper.php');
+  include_once('../core/Helper.php');
   include_once('../class/User.php');
   include_once('../class/Setting.php');
+  include_once('../class/Education.php');
   SessionUser::init();
 
   $helper = new Helper();
   $user = new User();
   $settings = new Setting();
+  $educations = new Education();
 
   if(!$user->checkUserProfile())
   {

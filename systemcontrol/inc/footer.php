@@ -29,5 +29,11 @@
         $(document).ready( function () {
             $('#sampleTable').DataTable();
         } );
+
+        $(document).ready( function () {
+            $('#educationTable').DataTable({
+                "ordering": false
+            });
+        } );
     </script>
     
