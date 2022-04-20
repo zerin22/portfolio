@@ -1,4 +1,11 @@
 <?php include_once("inc/header.php");?>
+<?php 
+  if(isset($_GET['id']) && is_numeric($_GET['id']))
+  {
+    $id = $_GET['id'];
+    $deleteEducation = $educations->deleteEducation($id);
+  }
+?>
   <body class="app sidebar-mini">
     <!-- Navbar-->
     <?php include_once('inc/navbar.php'); ?>
@@ -16,10 +23,16 @@
       </div>
       <div class="row">
         <div class="col-md-12">
+          <?php 
+            if(isset($deleteEducation))
+            {
+              echo $deleteEducation;
+            }
+          ?>
           <div class="tile">
           <div class="tile-body">
               <div class="action-div clearfix mb-3">
-                  <a href="education-create.php" class="float-right" style="text-decoration: none;"><i class="fa fa-plus" aria-hidden="true"></i> Add Education</a>
+                  <a href="education_create.php" class="float-right" style="text-decoration: none;"><i class="fa fa-plus" aria-hidden="true"></i> Add Education</a>
               </div>
               <div class="table-responsive">
                 <table class="table table-hover table-bordered" id="educationTable">
@@ -44,8 +57,8 @@
                           <tr>
                             <td><?php echo $data['title']; ?></td>
                             <td><?php echo $data['institute']; ?></td>
-                            <td><?php echo date('Y', strtotime($data['starting_year'])); ?></td>
-                            <td><?php echo date('Y', strtotime($data['ending_year'])); ?></td>
+                            <td><?php echo date('Y', strtotime($data['starting_date'])); ?></td>
+                            <td><?php echo date('Y', strtotime($data['ending_date'])); ?></td>
                             <td>
                               <?php 
                                 if($data['graduation_status'] == 1)
@@ -70,7 +83,7 @@
                                 <a href="" class="edit-link">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </a>
-                                <a href="" class="delete-link d-inline-block border-0">
+                                <a href="?id=<?php echo $data['id']; ?>" class="delete-link d-inline-block border-0">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>

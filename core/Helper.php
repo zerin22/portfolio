@@ -43,6 +43,8 @@ class Helper{
 			$title = 'Site Settings';
 		}elseif($title == 'education'){
 			$title = 'All Educations';
+		}elseif($title == 'education_create'){
+			$title = 'Create Education';
 		}
 		return $title = ucfirst($title);
 	}
