@@ -80,7 +80,7 @@
                               ?>
                             </td>
                             <td class="text-center">
-                                <a href="" class="edit-link">
+                                <a href="education_edit.php?id=<?php echo $data['id']; ?>" class="edit-link">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </a>
                                 <a href="?id=<?php echo $data['id']; ?>" class="delete-link d-inline-block border-0">
