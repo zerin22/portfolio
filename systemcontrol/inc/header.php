@@ -5,12 +5,14 @@
   include_once('../class/User.php');
   include_once('../class/Setting.php');
   include_once('../class/Education.php');
+  include_once('../class/Client.php');
   SessionUser::init();
 
   $helper = new Helper();
   $user = new User();
   $settings = new Setting();
   $educations = new Education();
+  $clients = new Client();
 
   if(!$user->checkUserProfile())
   {

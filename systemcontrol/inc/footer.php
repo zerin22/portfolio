@@ -35,5 +35,11 @@
                 "ordering": false
             });
         } );
+
+        $(document).ready( function () {
+            $('#clientTable').DataTable({
+                "ordering": false
+            });
+        } );
     </script>
     

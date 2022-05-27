@@ -21,5 +21,6 @@
             </li>
             <li><a class="app-menu__item" href="../../systemcontrol/settings.php"><i class="app-menu__icon fa fa-cog"></i><span class="app-menu__label">Settings</span></a></li>
             <li><a class="app-menu__item" href="../../systemcontrol/education.php"><i class="app-menu__icon fa fa-graduation-cap"></i><span class="app-menu__label">Educations</span></a></li>
+            <li><a class="app-menu__item" href="../../systemcontrol/client.php"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Clients</span></a></li>
         </ul>
     </aside>
