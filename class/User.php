@@ -196,8 +196,8 @@ class User{
         //FILE PROCESS
         $image_name = $avatar['user_avatar']['name'];
         $image_size = $avatar['user_avatar']['size'];
-        $image_temp = $avatar['user_avatar']['tmp_name'];
-        $image_type = $avatar['user_avatar']['type'];
+        // $image_temp = $avatar['user_avatar']['tmp_name'];
+        // $image_type = $avatar['user_avatar']['type'];
 
         $allowed = array(
             "jpg"  => "image/jpg", 

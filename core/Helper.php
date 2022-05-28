@@ -47,6 +47,8 @@ class Helper{
 			$title = 'Create Education';
 		}elseif($title == 'client'){
 			$title = 'All Clients';
+		}elseif($title == 'client_create'){
+			$title = 'Create Client';
 		}
 		return $title = ucfirst($title);
 	}
